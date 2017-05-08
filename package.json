@@ -10,6 +10,7 @@
   "license": "ISC",
   "dependencies": {
     "hapi": "^16.1.1",
+    "hapi-auth-bearer-token": "^5.0.0",
     "sqlite3": "^3.1.8"
   }
 }
