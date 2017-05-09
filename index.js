@@ -30,6 +30,9 @@ server.register([
         },
         relativeTo: __dirname,
         path: './views',
+        layoutPath: './views/layout',
+        layout: true,
+        partialsPath: './views/partials',
         isCached: false
     });
 
