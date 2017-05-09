@@ -10,6 +10,10 @@ module.exports = [
         handler: Pages.home
     }, {
         method: 'GET',
+        path: '/recipes/{id}',
+        handler: Pages.viewRecipe
+    }, {
+        method: 'GET',
         path: '/{params*}',
         handler: Assets.servePublicDirecory
     }
