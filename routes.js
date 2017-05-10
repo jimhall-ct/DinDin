@@ -2,6 +2,7 @@
 
 const Pages = require('./handlers/pages');
 const Assets = require('./handlers/assets');
+const Actions = require('./handlers/actions');
 
 module.exports = [
     {
@@ -34,9 +35,16 @@ module.exports = [
         }
     },{
         method: 'GET',
-        path: '/search',
-        handler: function (request, reply) {
-            reply(request.query.search1);
-        }
+        path: '/login',
+        handler: Pages.login
+    },{
+        method: 'POST',
+        path: '/login',
+        config: {
+            payload: {
+                output: 'data'
+            }
+        },
+        handler: Actions.login
     }
 ];
