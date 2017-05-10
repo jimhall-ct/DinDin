@@ -18,9 +18,15 @@ server.bind({
 server.register([
     require('dindin-api'),
     require('inert'),
-    require('vision')
+    require('vision'),
+    require('hapi-auth-cookie')
 ], (err) => {
     if (err) throw err;
+
+    server.auth.strategy('session', 'cookie', 'try', {
+        password: 'password-that-is-at-least-32-chars',
+        isSecure: false
+    });
 
     server.route(require('./routes'));
 
