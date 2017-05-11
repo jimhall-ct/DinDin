@@ -30,6 +30,14 @@ exports.viewRecipe = function(request, reply) {
     });
 };
 
+exports.createRecipe = function(request, reply) {
+    reply.view('create', {
+        user: request.auth.credentials
+    });
+};
+
 exports.login = function(request, reply) {
     reply.view('login');
 };
+
+

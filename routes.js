@@ -46,5 +46,27 @@ module.exports = [
             }
         },
         handler: Actions.login
+    },{
+        method: 'GET',
+        path: '/logout',
+        handler: Actions.logout
+    },{
+        method: 'GET',
+        path: '/create',
+        handler: Pages.createRecipe,
+        config: {
+            auth: {
+                mode: 'required'
+            }
+        }
+    },{
+        method: 'POST',
+        path: '/create',
+        handler: Actions.createRecipe,
+        config: {
+            auth: {
+                mode: 'required'
+            }
+        }
     }
 ];
